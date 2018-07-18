@@ -31,4 +31,25 @@ Vagrant.configure("2") do |config|
       v.memory = 2048
     end
   end
+
+  config.vm.define "replica.vm" do |replica|
+    replica.vm.box = "centos/7"
+    replica.vm.hostname = "replica.vm"
+    replica.vm.network "private_network", ip: "192.168.50.7"
+    replica.vm.provision "shell", path: "scripts/replica.sh"
+    replica.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+    end
+  end
+
+  config.vm.define "gitlab.vm" do |gitlab|
+    gitlab.vm.box = "centos/7"
+    gitlab.vm.hostname = "gitlab.vm"
+    gitlab.vm.network "private_network", ip: "192.168.50.8"
+    gitlab.vm.provision "shell", path: "scripts/linux_gitlab.sh"
+    gitlab.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+    end
+  end
+
 end
