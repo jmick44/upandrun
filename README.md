@@ -2,9 +2,9 @@
 
 A very simple vagrant environment for getting up and running with Puppet Enterprise. 
 
-This repo provides you with a complete, yet simple environment that consists of a master (CentOS7), as well as a Linux (CentOS7) and Windows VM.
+This repo provides you with a complete, yet simple environment that consists of a master (CentOS7), as well as a Linux (CentOS7) and Windows VM. It's been updated to add a VM running Gitlab and a separate VM for use as a replica in an HA configuration.
 
-Shout out to Grace Andrews for putting this together! I have updated this fork to use Puppet Enterprise 2017.3.5.
+Shout out to Grace Andrews for putting this together! I have updated this fork to use Puppet Enterprise 2018.1.2.
 
 ## Pre-Steps ##
 
@@ -26,6 +26,10 @@ Once both are installed, you'll be able to do the following steps from your CLI:
 'vagrant up /linux/'
 
 'vagrant up /windows/'
+
+'vagrant up /gitlab/'
+
+'vagrant up /replica/'
 
 'vagrant hosts list'
 
