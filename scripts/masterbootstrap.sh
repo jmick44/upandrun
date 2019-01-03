@@ -10,7 +10,6 @@ cat > pe.conf <<-EOF
 {
   "console_admin_password": "puppetlabs"
   "puppet_enterprise::puppet_master_host": "%{::trusted.certname}"
-  "puppet_enterprise::use_application_services": true
   "puppet_enterprise::profile::master::check_for_updates": false
 }
 EOF
